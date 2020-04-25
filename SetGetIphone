@@ -1,0 +1,71 @@
+
+public class SetGetIphone {
+
+	public static void main(String[] args) {
+		
+		Product p1 = new Product("Iphone 12",10000.00,1);
+		Product p2 = new Product("I",30000.00,2);
+		
+		p1.setPrice(11500.00 );
+		
+		System.out.println(p1.getPrice());
+		System.out.println(p2.getPrice());
+		}
+}
+
+class Product {
+	private String name;
+	private Double price;
+	private Integer quantity;
+	
+	public Product(String name, Double price, Integer quantity) {
+//		this.name = name;
+		setName(name);
+//		this.price = price;
+		setPrice(price);
+//		this.quantity = quantity;
+		setQuantity(quantity);
+	}
+	
+	public Double getPrice() {
+	return price;
+	}
+	public void setPrice(Double price) {
+		if(price>1 && price<=1000000) {
+	this.price= price;
+		}else {
+			System.err.println ("WRONG PRICE VALUE!!!");
+		}
+	}
+
+			
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		if(quantity>=1 && quantity<1000) {
+			this.quantity= quantity;
+		}else {
+			System.err.println("WRONG QUANTITY VALUE!");
+		}
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		int len= name.length();
+		if(len>2) {
+			this.name=name;
+		}else {
+			System.err.println("WRONG NAME!");
+		}
+	}
+
+	
+	
+	
+	
+}
